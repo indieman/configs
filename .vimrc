@@ -173,6 +173,10 @@ let g:snippets_dir = "~/.vim/vim-snippets/snippets"
 " let g:airline#extensions#tabline#enabled = 1
 " let g:airline#extensions#tabline#formatter = 'unique_tail'
 
+"Настройки py-mode
+let g:pymode_lint = 0
+let g:pymode_lint_on_write = 0
+
 " TagBar настройки
 map <F4> :TagbarToggle<CR>
 let g:tagbar_autofocus = 0 " автофокус на Tagbar при открытии
@@ -190,3 +194,7 @@ map <F2> :TaskList<CR>       " отобразить список тасков н
 map <C-q> :bd<CR>        " CTRL+Q - закрыть текущий буффер
 map <F5> :w\|!ipython %<cr>
 imap <F5> <Esc><F5>
+
+function! FormatJSON()
+    :%!python -m json.tool
+endfunction
